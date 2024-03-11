@@ -15,6 +15,15 @@ struct CPU {
     flag: Flags
 }
 
+
+/*
+Instructions:
+0x00 => NO OP.
+0x01 => MOV src, dst
+0x02 => MOV value, dst
+0x03 => ADD src, dst
+0x04 => JMP address # The address is found by summing the next two bytes of data.
+ */
 fn do_instruction(instruct: [u8; 8], cpu: &mut CPU) {
     match instruct[0] {
         0x00 => {}
